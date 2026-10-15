@@ -1,0 +1,201 @@
+/* --- Estilos Globales --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 15px;
+}
+
+/* --- Contenedor Principal (Mobile-First) --- */
+.container {
+    width: 100%;
+    max-width: 450px;
+    background: #ffffff;
+    padding: 25px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    border-top: 8px solid #ff1c1c;
+}
+
+h1 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* --- Buscador Responsivo --- */
+.search-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-box input:focus {
+    border-color: #ff1c1c;
+}
+
+.search-box button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff1c1c;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search-box button:hover {
+    background-color: #cc1111;
+}
+
+/* --- Tarjeta Base --- */
+.card {
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 15px;
+    background: #fdfdfd;
+    border: 1px solid #eaeaea;
+    display: none;
+    transition: background-color 0.5s ease;
+}
+
+.card h2 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.card img {
+    width: 100%;
+    max-width: 140px;
+    height: auto;
+    filter: drop-shadow(0px 6px 8px rgba(0,0,0,0.15));
+}
+
+.card p.pokemon-types {
+    background: rgba(0, 0, 0, 0.12);
+    padding: 6px 14px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+/* --- Barras de Estadísticas --- */
+.stats-container {
+    margin-top: 20px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    text-align: left;
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.stat-row:last-child {
+    margin-bottom: 0;
+}
+
+.stat-name {
+    width: 65px;
+    font-weight: bold;
+}
+
+.stat-num {
+    width: 35px;
+    text-align: right;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.stat-bar {
+    flex: 1;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    transition: width 0.4s ease-in-out;
+}
+
+/* Contraste oscuro para tipos con fondos claros */
+.card.electric .bar-fill, .card.ice .bar-fill {
+    background-color: #333333;
+}
+
+/* --- Colores Temáticos por Tipo --- */
+.card.fire { background-color: #ff9d55; color: #ffffff; }
+.card.water { background-color: #5090d6; color: #ffffff; }
+.card.grass { background-color: #63bc5a; color: #ffffff; }
+.card.electric { background-color: #f4d23c; color: #333333; }
+.card.ice { background-color: #73cec0; color: #333333; }
+.card.fighting { background-color: #ce4069; color: #ffffff; }
+.card.poison { background-color: #aa6bcb; color: #ffffff; }
+.card.ground { background-color: #d97746; color: #ffffff; }
+.card.flying { background-color: #8fa8dd; color: #ffffff; }
+.card.psychic { background-color: #fa7179; color: #ffffff; }
+.card.bug { background-color: #91c12f; color: #ffffff; }
+.card.rock { background-color: #c5b78c; color: #ffffff; }
+.card.ghost { background-color: #5269ac; color: #ffffff; }
+.card.dragon { background-color: #0b6dc4; color: #ffffff; }
+.card.dark { background-color: #5a5366; color: #ffffff; }
+.card.steel { background-color: #5a8ea1; color: #ffffff; }
+.card.fairy { background-color: #ec8fe6; color: #ffffff; }
+.card.normal { background-color: #9099a1; color: #ffffff; }
+
+.card.fire h2, .card.water h2, .card.grass h2, .card.poison h2, 
+.card.ghost h2, .card.dragon h2, .card.dark h2, .card.fighting h2 {
+    color: #ffffff;
+}
+
+/* --- Media Queries (Computadoras y Tablets) --- */
+@media (min-width: 480px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    .search-box {
+        flex-direction: row;
+    }
+    .search-box input {
+        flex: 1;
+    }
+    .search-box button {
+        width: auto;
+        padding: 12px 25px;
+    }
+}
