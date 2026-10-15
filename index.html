@@ -1,24 +1,61 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi PokéAPI App</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Pokédex</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <header class="header">
+    <div class="logo">🔴 Pokédex</div>
+    <p>¡Descubre todos los Pokémon!</p>
+  </header>
 
-    <main class="container">
-        <h1>Pokédex Buscador</h1>
-        <div class="search-box">
-            <input type="text" id="pokemon-input" placeholder="Escribe el nombre o ID...">
-            <button id="search-btn">Buscar</button>
-        </div>
-        
-        <!-- Contenedor dinámico para la información del Pokémon -->
-        <div id="pokemon-card" class="card"></div>
-    </main>
+  <main class="container">
+    <section class="search-box">
+      <h1>Explora el mundo Pokémon</h1>
+      <p>Busca por nombre o número de Pokédex.</p>
 
-    <script src="app.js"></script>
+      <form id="search-form">
+        <input
+          id="search-input"
+          type="text"
+          placeholder="Ejemplo: pikachu o 25"
+          autocomplete="off"
+          aria-label="Nombre o número del Pokémon"
+        >
+        <button type="submit">Buscar</button>
+      </form>
+
+      <button id="reset-button" class="secondary">
+        Mostrar todos
+      </button>
+      <p id="status" role="status">Cargando Pokémon...</p>
+    </section>
+
+    <section id="pokemon-grid" class="pokemon-grid"
+             aria-label="Lista de Pokémon"></section>
+
+    <div class="load-container">
+      <button id="load-more">Cargar más Pokémon</button>
+    </div>
+  </main>
+
+  <dialog id="pokemon-dialog">
+    <button id="close-dialog" class="close-button"
+            aria-label="Cerrar">✕</button>
+    <div id="pokemon-detail"></div>
+  </dialog>
+
+  <footer>
+    <p>Datos proporcionados por
+      <a href="https://pokeapi.co/" target="_blank"
+         rel="noopener noreferrer">PokéAPI</a>
+    </p>
+    <p>Proyecto personal de Pokédex</p>
+  </footer>
 </body>
 </html>
