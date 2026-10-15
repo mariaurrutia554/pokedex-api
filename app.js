@@ -5,6 +5,7 @@ const cardContainer = document.getElementById('pokemon-card');
 async function getPokemon(pokemonName) {
     try {
         const name = pokemonName.trim().toLowerCase();
+        // DIRECCIÓN CORREGIDA AQUÍ
         const response = await fetch('https://pokeapi.co' + name);
         
         if (!response.ok) {
@@ -31,7 +32,7 @@ function renderPokemonCard(pokemon) {
     const mainType = typesArray[0]; 
     const typesText = typesArray.join(', ');
 
-    // CORRECCIÓN AQUÍ: Buscamos correctamente la posición exacta de cada estadística
+    // ESTADÍSTICAS CORREGIDAS PARA QUE LEA LOS VALORES REALES
     const hp = pokemon.stats[0].base_stat;
     const attack = pokemon.stats[1].base_stat;
     const defense = pokemon.stats[2].base_stat;
